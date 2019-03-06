@@ -19,6 +19,15 @@ public class UserRepository {
 		return null;
 	}
 
+	public User findByEmail(String email) {
+		Optional<User> foundUser = UserFakeDataBase.getRegisteredUsers().stream()
+				.filter(user -> email.equals(user.getEmail())).findFirst();
+		if (foundUser.isPresent()) {
+			return foundUser.get();
+		}
+		return null;
+	}
+
 	public List<User> findAll() {
 		return UserFakeDataBase.getRegisteredUsers();
 	}

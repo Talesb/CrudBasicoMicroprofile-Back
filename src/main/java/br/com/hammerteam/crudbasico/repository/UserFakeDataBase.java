@@ -14,9 +14,9 @@ public class UserFakeDataBase {
 
 		if (registeredUsers == null) {
 			registeredUsers = new ArrayList<User>();
-			User user1 = new User("Jhon Doe", "jhonedoe@email.com", "pass", Arrays.asList("user", "protected"));
-			User user2 = new User("Carl Jhonson", "carl@email.com", "pass2", Arrays.asList("user", "protected"));
-			User user3 = new User("Tommy Vercetti", "tommy@email.com", "pass3", Arrays.asList("user", "protected"));
+			User user1 = new User("Jhon Doe", "jhonedoe@email.com", "pass", Arrays.asList("user", "protected"),"BRA");
+			User user2 = new User("Carl Jhonson", "carl@email.com", "pass2", Arrays.asList("user", "protected"),"EUA");
+			User user3 = new User("Tommy Vercetti", "tommy@email.com", "pass3", Arrays.asList("user", "protected"),"JPN");
 			registeredUsers.add(user1);
 			registeredUsers.add(user2);
 			registeredUsers.add(user3);
