@@ -1,4 +1,4 @@
-package br.com.hammerteam.repository;
+package br.com.hammerteam.crudbasico.repository;
 
 import java.util.ArrayList;
 import java.util.Arrays;

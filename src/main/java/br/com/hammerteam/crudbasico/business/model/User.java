@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.List;
 
 import br.com.hammerteam.crudbasico.business.dto.UserDTO;
+import br.com.hammerteam.crudbasico.business.dto.UserLoginDTO;
 
 public class User implements Serializable {
 
@@ -30,8 +31,6 @@ public class User implements Serializable {
 		this.password = password;
 		this.groups = groups;
 	}
-	
- 
 
 	public long getId() {
 		return id;
@@ -81,10 +80,25 @@ public class User implements Serializable {
 		this.nationality = nationality;
 	}
 
-	public UserDTO getDTO() {
-		UserDTO user = new UserDTO();
+	public UserLoginDTO getUserLoginDTO() {
+		UserLoginDTO user = new UserLoginDTO();
 		user.setEmail(this.getEmail());
 		user.setPassword(this.getPassword());
+		return user;
+	}
+
+	public UserDTO getUserDTO() {
+		UserDTO user = new UserDTO();
+		user.setName(this.getName());
+		user.setEmail(this.getEmail());
+		user.setPassword(this.getPassword());
+		user.setGroups(this.getGroups());
+		user.setNationality(this.getNationality());
+		return user;
+	}
+
+	public static User newUser(UserDTO userDTO) {
+		User user = new User(userDTO.getName(), userDTO.getEmail(), userDTO.getPassword(), userDTO.getGroups());
 		return user;
 	}
 

@@ -1,10 +1,13 @@
-package br.com.hammerteam.repository;
+package br.com.hammerteam.crudbasico.repository;
 
 import java.util.List;
 import java.util.Optional;
 
+import javax.enterprise.context.RequestScoped;
+
 import br.com.hammerteam.crudbasico.business.model.User;
 
+@RequestScoped
 public class UserRepository {
 
 	public User findById(long id) {
@@ -20,11 +23,11 @@ public class UserRepository {
 		return UserFakeDataBase.getRegisteredUsers();
 	}
 
-	public boolean save(User user) {
+	public long save(User user) {
 		long lastId = UserFakeDataBase.getRegisteredUsers().size();
 		user.setId(lastId + 1);
 		UserFakeDataBase.getRegisteredUsers().add(user);
-		return true;
+		return user.getId();
 	}
 
 }
